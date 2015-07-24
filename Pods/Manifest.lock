@@ -1,0 +1,19 @@
+PODS:
+  - SYADDemo (0.0.1)
+
+DEPENDENCIES:
+  - SYADDemo (from `git@github.com:sauchye/SYADDemo.git`)
+
+EXTERNAL SOURCES:
+  SYADDemo:
+    :git: git@github.com:sauchye/SYADDemo.git
+
+CHECKOUT OPTIONS:
+  SYADDemo:
+    :commit: 54c76d545627aa70d498be07d18627e690295f6b
+    :git: git@github.com:sauchye/SYADDemo.git
+
+SPEC CHECKSUMS:
+  SYADDemo: 7c7bece06f9d1178b8b1cb86837472d5c1f3e363
+
+COCOAPODS: 0.35.0
