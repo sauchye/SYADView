@@ -14,6 +14,12 @@
 		F4E03D161B626CE900D6CD83 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E03D151B626CE900D6CD83 /* Images.xcassets */; };
 		F4E03D191B626CE900D6CD83 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E03D171B626CE900D6CD83 /* LaunchScreen.xib */; };
 		F4E03D251B626CEA00D6CD83 /* SYADDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E03D241B626CEA00D6CD83 /* SYADDemoTests.m */; };
+		F4E03D351B626EDA00D6CD83 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4E03D301B626EDA00D6CD83 /* 1.jpg */; };
+		F4E03D361B626EDA00D6CD83 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4E03D311B626EDA00D6CD83 /* 2.jpg */; };
+		F4E03D371B626EDA00D6CD83 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4E03D321B626EDA00D6CD83 /* 3.jpg */; };
+		F4E03D391B626EDA00D6CD83 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4E03D341B626EDA00D6CD83 /* 5.jpg */; };
+		F4E03D3C1B626EEA00D6CD83 /* SYADView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E03D3B1B626EEA00D6CD83 /* SYADView.m */; };
+		F4E03D3E1B627AC100D6CD83 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4E03D3D1B627AC100D6CD83 /* 4.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,13 @@
 		F4E03D1E1B626CE900D6CD83 /* SYADDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SYADDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E03D231B626CE900D6CD83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4E03D241B626CEA00D6CD83 /* SYADDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYADDemoTests.m; sourceTree = "<group>"; };
+		F4E03D301B626EDA00D6CD83 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		F4E03D311B626EDA00D6CD83 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		F4E03D321B626EDA00D6CD83 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		F4E03D341B626EDA00D6CD83 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		F4E03D3A1B626EEA00D6CD83 /* SYADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYADView.h; sourceTree = "<group>"; };
+		F4E03D3B1B626EEA00D6CD83 /* SYADView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYADView.m; sourceTree = "<group>"; };
+		F4E03D3D1B627AC100D6CD83 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +94,8 @@
 		F4E03D071B626CE900D6CD83 /* SYADDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F4E03D2F1B626EDA00D6CD83 /* Resources */,
+				F4E03D2E1B626DAB00D6CD83 /* Class */,
 				F4E03D0C1B626CE900D6CD83 /* AppDelegate.h */,
 				F4E03D0D1B626CE900D6CD83 /* AppDelegate.m */,
 				F4E03D0F1B626CE900D6CD83 /* ViewController.h */,
@@ -117,6 +132,27 @@
 				F4E03D231B626CE900D6CD83 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4E03D2E1B626DAB00D6CD83 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				F4E03D3A1B626EEA00D6CD83 /* SYADView.h */,
+				F4E03D3B1B626EEA00D6CD83 /* SYADView.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		F4E03D2F1B626EDA00D6CD83 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F4E03D301B626EDA00D6CD83 /* 1.jpg */,
+				F4E03D311B626EDA00D6CD83 /* 2.jpg */,
+				F4E03D321B626EDA00D6CD83 /* 3.jpg */,
+				F4E03D3D1B627AC100D6CD83 /* 4.jpg */,
+				F4E03D341B626EDA00D6CD83 /* 5.jpg */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +199,7 @@
 		F4E03CFD1B626CE900D6CD83 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SY;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = sauchye.com;
 				TargetAttributes = {
@@ -199,7 +236,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E03D3E1B627AC100D6CD83 /* 4.jpg in Resources */,
 				F4E03D141B626CE900D6CD83 /* Main.storyboard in Resources */,
+				F4E03D391B626EDA00D6CD83 /* 5.jpg in Resources */,
+				F4E03D351B626EDA00D6CD83 /* 1.jpg in Resources */,
+				F4E03D361B626EDA00D6CD83 /* 2.jpg in Resources */,
+				F4E03D371B626EDA00D6CD83 /* 3.jpg in Resources */,
 				F4E03D191B626CE900D6CD83 /* LaunchScreen.xib in Resources */,
 				F4E03D161B626CE900D6CD83 /* Images.xcassets in Resources */,
 			);
@@ -220,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E03D111B626CE900D6CD83 /* ViewController.m in Sources */,
+				F4E03D3C1B626EEA00D6CD83 /* SYADView.m in Sources */,
 				F4E03D0E1B626CE900D6CD83 /* AppDelegate.m in Sources */,
 				F4E03D0B1B626CE900D6CD83 /* main.m in Sources */,
 			);
