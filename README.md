@@ -3,7 +3,7 @@
 ###Installation
 pod 'SYADView'
 ###Usage
-#import SYADView
+you need #import "SYADView.h"
 ##easy use
 
 
