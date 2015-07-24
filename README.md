@@ -1,7 +1,7 @@
 ###SYADDemo
 
 ###Installation
-pod 'SYADView'
+pod 'SYADDemo'
 ###Usage
 #import SYADView
 ##easy use
