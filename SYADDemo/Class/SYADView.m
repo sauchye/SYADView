@@ -143,7 +143,6 @@
     }else{
         
         _pageControl.currentPage = page;
-        
     }
 }
 

@@ -24,6 +24,7 @@
         _imgData = @[@"1.jpg", @"2.jpg", @"3.jpg", @"4.jpg", @"5.jpg"];
     }
     
+#pragma mark - Example
     if (_imgData.count > 0) {
         SYADView *adView = [[SYADView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width/2)];
         adView.imgData = _imgData;
