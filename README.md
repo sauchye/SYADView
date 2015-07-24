@@ -1,7 +1,7 @@
 ###SYADDemo
 
 ###Installation
-pod 'SYADDemo'
+add SYADView.h and SYADView.m to your project.
 ###Usage
 you need #import "SYADView.h"
 ##easy use
