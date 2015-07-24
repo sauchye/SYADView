@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>SYADDemo.xcscheme</key>
+		<key>SYADView.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>F4E03D041B626CE900D6CD83</key>
+		<key>F4E03D471B62A40F00D6CD83</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F4E03D1D1B626CE900D6CD83</key>
+		<key>F4E03D601B62A41000D6CD83</key>
 		<dict>
 			<key>primary</key>
 			<true/>

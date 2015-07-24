@@ -1,19 +1,19 @@
 //
-//  SYADDemoTests.m
-//  SYADDemoTests
+//  SYADViewTests.m
+//  SYADViewTests
 //
-//  Created by Sauchye on 7/24/15.
+//  Created by Sauchye on 7/25/15.
 //  Copyright (c) 2015 sauchye.com. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface SYADDemoTests : XCTestCase
+@interface SYADViewTests : XCTestCase
 
 @end
 
-@implementation SYADDemoTests
+@implementation SYADViewTests
 
 - (void)setUp {
     [super setUp];

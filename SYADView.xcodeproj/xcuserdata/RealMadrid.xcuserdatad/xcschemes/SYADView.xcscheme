@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F4E03D041B626CE900D6CD83"
-               BuildableName = "SYADDemo.app"
-               BlueprintName = "SYADDemo"
-               ReferencedContainer = "container:SYADDemo.xcodeproj">
+               BlueprintIdentifier = "F4E03D471B62A40F00D6CD83"
+               BuildableName = "SYADView.app"
+               BlueprintName = "SYADView"
+               ReferencedContainer = "container:SYADView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F4E03D1D1B626CE900D6CD83"
-               BuildableName = "SYADDemoTests.xctest"
-               BlueprintName = "SYADDemoTests"
-               ReferencedContainer = "container:SYADDemo.xcodeproj">
+               BlueprintIdentifier = "F4E03D601B62A41000D6CD83"
+               BuildableName = "SYADViewTests.xctest"
+               BlueprintName = "SYADViewTests"
+               ReferencedContainer = "container:SYADView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F4E03D1D1B626CE900D6CD83"
-               BuildableName = "SYADDemoTests.xctest"
-               BlueprintName = "SYADDemoTests"
-               ReferencedContainer = "container:SYADDemo.xcodeproj">
+               BlueprintIdentifier = "F4E03D601B62A41000D6CD83"
+               BuildableName = "SYADViewTests.xctest"
+               BlueprintName = "SYADViewTests"
+               ReferencedContainer = "container:SYADView.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F4E03D041B626CE900D6CD83"
-            BuildableName = "SYADDemo.app"
-            BlueprintName = "SYADDemo"
-            ReferencedContainer = "container:SYADDemo.xcodeproj">
+            BlueprintIdentifier = "F4E03D471B62A40F00D6CD83"
+            BuildableName = "SYADView.app"
+            BlueprintName = "SYADView"
+            ReferencedContainer = "container:SYADView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,10 +76,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F4E03D041B626CE900D6CD83"
-            BuildableName = "SYADDemo.app"
-            BlueprintName = "SYADDemo"
-            ReferencedContainer = "container:SYADDemo.xcodeproj">
+            BlueprintIdentifier = "F4E03D471B62A40F00D6CD83"
+            BuildableName = "SYADView.app"
+            BlueprintName = "SYADView"
+            ReferencedContainer = "container:SYADView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,10 +95,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F4E03D041B626CE900D6CD83"
-            BuildableName = "SYADDemo.app"
-            BlueprintName = "SYADDemo"
-            ReferencedContainer = "container:SYADDemo.xcodeproj">
+            BlueprintIdentifier = "F4E03D471B62A40F00D6CD83"
+            BuildableName = "SYADView.app"
+            BlueprintName = "SYADView"
+            ReferencedContainer = "container:SYADView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
