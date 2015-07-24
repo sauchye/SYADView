@@ -22,6 +22,8 @@
     return self;
 }
 
+
+
 -(void)setImgData:(NSArray *)imgData{
     
     _imgData = imgData;
