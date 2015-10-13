@@ -1,19 +1,79 @@
-###SYADDemo
+### SYADDemo
 
-###Installation
-add SYADView.h and SYADView.m to your project.
-###Usage
-you need #import "SYADView.h"
-##easy use
+### Installation
+
+Drag SYADView  file to your project.
+
+### Usage
+
+  # import "SYADView.h"
+
+## Usage
 
 
-        SYADView *adView = [[SYADView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width/2)];
-        adView.imgData = _imgData;
-        adView.tapImageViewClickedBlock = ^(NSInteger index, NSString *url){
-            //处理点击图片逻辑
-            NSLog(@"tap index :%ld",(long)index);
+
+``` objective-c
+        _adView = [[SYADView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/2)
+                                        imageData:_imgData
+                                    pageTintColor:[UIColor grayColor]
+                                 currentTintColor:[UIColor orangeColor]
+                                    pageAlignment:SYPageControllAlignmentRight];
+
+        _adView.didSelectedImageBlock = ^(NSInteger index, NSString *url){
+        
+            NSLog(@"didSelectedImage :%ld",(long)index);
         };
-        [self.view addSubview:adView];
+        [self.view addSubview:_adView];
+```
 
-###License
-This project is under MIT License. See LICENSE file for more information.
+
+
+### Dissmiss ADView
+
+``` objective-c
+- (void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    
+    [_adView freeTimer];
+}
+```
+
+
+
+###  Available
+
+iOS >= 6.0
+
+##### Method
+
+``` objective-c
+- (instancetype)initWithFrame:(CGRect)frame
+            imageData:(NSArray *)imageData
+        pageTintColor:(UIColor *)pageTintColor
+     currentTintColor:(UIColor *)currentTintColor
+        pageAlignment:(SYPageControlAlignment)pageAlignment;
+```
+
+
+
+##### You Can Define
+
+- PageControll Alignment
+
+``` objective-c
+typedef NS_ENUM(NSInteger, SYPageControlAlignment) {
+    
+    SYPageControlAlignmentLeft = 0,
+    SYPageControlAlignmentCenter,
+    SYPageControlAlignmentRight
+};
+```
+
+- PageControl TintColor
+  
+  ​
+
+### License
+
+SYADDemo is under MIT License. See LICENSE file for more information.

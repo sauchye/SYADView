@@ -6,11 +6,15 @@
 //  Copyright (c) 2015 sauchye.com. All rights reserved.
 //
 
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
 #import "ViewController.h"
 #import "SYADView.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSArray *imgData;
+@property (nonatomic, strong) SYADView *adView;
 
 @end
 
@@ -26,15 +30,26 @@
     
 #pragma mark - Example
     if (_imgData.count > 0) {
-        SYADView *adView = [[SYADView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width/2)];
-        adView.imgData = _imgData;
-        adView.tapImageViewClickedBlock = ^(NSInteger index, NSString *url){
-            //处理点击图片逻辑
-            NSLog(@"tap index :%ld",(long)index);
+        
+        _adView = [[SYADView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/2)
+                                        imageData:_imgData
+                                    pageTintColor:[UIColor grayColor]
+                                 currentTintColor:[UIColor orangeColor]
+                                    pageControlAlignment:SYPageControlAlignmentRight];
+
+        _adView.didSelectedImageBlock = ^(NSInteger index, NSString *url){
+        
+            NSLog(@"didSelectedImage :%ld",(long)index);
         };
-        [self.view addSubview:adView];
+        [self.view addSubview:_adView];
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
     
+    [super viewWillDisappear:animated];
+    
+    [_adView freeTimer];
 }
 
 

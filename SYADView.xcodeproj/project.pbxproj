@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023799981BCCDA8F001F1005 /* SYADView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023799971BCCDA8F001F1005 /* SYADView.m */; settings = {ASSET_TAGS = (); }; };
 		F4E03D4E1B62A40F00D6CD83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E03D4D1B62A40F00D6CD83 /* main.m */; };
 		F4E03D511B62A40F00D6CD83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E03D501B62A40F00D6CD83 /* AppDelegate.m */; };
 		F4E03D541B62A40F00D6CD83 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E03D531B62A40F00D6CD83 /* ViewController.m */; };
@@ -14,7 +15,6 @@
 		F4E03D591B62A40F00D6CD83 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E03D581B62A40F00D6CD83 /* Images.xcassets */; };
 		F4E03D5C1B62A40F00D6CD83 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E03D5A1B62A40F00D6CD83 /* LaunchScreen.xib */; };
 		F4E03D681B62A41000D6CD83 /* SYADViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E03D671B62A41000D6CD83 /* SYADViewTests.m */; };
-		F4E03D741B62A4A300D6CD83 /* SYADView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E03D731B62A4A300D6CD83 /* SYADView.m */; };
 		F4E03D7B1B62A4BF00D6CD83 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4E03D761B62A4BF00D6CD83 /* 1.jpg */; };
 		F4E03D7C1B62A4BF00D6CD83 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4E03D771B62A4BF00D6CD83 /* 2.jpg */; };
 		F4E03D7D1B62A4BF00D6CD83 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4E03D781B62A4BF00D6CD83 /* 3.jpg */; };
@@ -33,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		023799961BCCDA8F001F1005 /* SYADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYADView.h; sourceTree = "<group>"; };
+		023799971BCCDA8F001F1005 /* SYADView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYADView.m; sourceTree = "<group>"; };
 		F4E03D481B62A40F00D6CD83 /* SYADView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYADView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E03D4C1B62A40F00D6CD83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4E03D4D1B62A40F00D6CD83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,8 +48,6 @@
 		F4E03D611B62A41000D6CD83 /* SYADViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SYADViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E03D661B62A41000D6CD83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4E03D671B62A41000D6CD83 /* SYADViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYADViewTests.m; sourceTree = "<group>"; };
-		F4E03D721B62A4A300D6CD83 /* SYADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYADView.h; sourceTree = "<group>"; };
-		F4E03D731B62A4A300D6CD83 /* SYADView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYADView.m; sourceTree = "<group>"; };
 		F4E03D761B62A4BF00D6CD83 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		F4E03D771B62A4BF00D6CD83 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		F4E03D781B62A4BF00D6CD83 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
@@ -73,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		023799951BCCDA8F001F1005 /* SYADView */ = {
+			isa = PBXGroup;
+			children = (
+				023799961BCCDA8F001F1005 /* SYADView.h */,
+				023799971BCCDA8F001F1005 /* SYADView.m */,
+			);
+			path = SYADView;
+			sourceTree = "<group>";
+		};
 		F4E03D3F1B62A40F00D6CD83 = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +103,8 @@
 		F4E03D4A1B62A40F00D6CD83 /* SYADView */ = {
 			isa = PBXGroup;
 			children = (
+				023799951BCCDA8F001F1005 /* SYADView */,
 				F4E03D751B62A4BF00D6CD83 /* Resources */,
-				F4E03D711B62A4A300D6CD83 /* Class */,
 				F4E03D4F1B62A40F00D6CD83 /* AppDelegate.h */,
 				F4E03D501B62A40F00D6CD83 /* AppDelegate.m */,
 				F4E03D521B62A40F00D6CD83 /* ViewController.h */,
@@ -132,15 +141,6 @@
 				F4E03D661B62A41000D6CD83 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F4E03D711B62A4A300D6CD83 /* Class */ = {
-			isa = PBXGroup;
-			children = (
-				F4E03D721B62A4A300D6CD83 /* SYADView.h */,
-				F4E03D731B62A4A300D6CD83 /* SYADView.m */,
-			);
-			path = Class;
 			sourceTree = "<group>";
 		};
 		F4E03D751B62A4BF00D6CD83 /* Resources */ = {
@@ -261,7 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E03D541B62A40F00D6CD83 /* ViewController.m in Sources */,
-				F4E03D741B62A4A300D6CD83 /* SYADView.m in Sources */,
+				023799981BCCDA8F001F1005 /* SYADView.m in Sources */,
 				F4E03D511B62A40F00D6CD83 /* AppDelegate.m in Sources */,
 				F4E03D4E1B62A40F00D6CD83 /* main.m in Sources */,
 			);
