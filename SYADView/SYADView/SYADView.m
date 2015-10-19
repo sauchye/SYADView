@@ -1,8 +1,8 @@
 //
 //  SYADView.m
-//  SYADDemo
+//  SYADView
 //  https://github.com/sauchye/SYADView
-//  Created by Sauchye on 7/24/15.
+//  Created by Saucheong Ye on 7/24/15.
 //  Copyright (c) 2015 sauchye.com. All rights reserved.
 //
 
@@ -16,12 +16,20 @@ static CGFloat const  padding = 20;
 
 @interface SYADView ()<UIScrollViewDelegate>
 
+/**
+ *  default scrollsToTop NO
+ */
 @property (nonatomic, strong) UIScrollView *adScrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
-@property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) NSArray *imgData;
 @property (nonatomic) CGFloat currentWidth;
 @property (nonatomic) CGFloat currentHeight;
+@property (nonatomic, getter=isDrag) BOOL drag;
+
+/**
+ *  scrollTime = 0 ADView not auto scroll
+ */
+@property (nonatomic) NSTimeInterval scrollTime;
 
 @end
 
@@ -30,15 +38,17 @@ static CGFloat const  padding = 20;
 #pragma mark - configureADScrollView
 
 - (instancetype)initWithFrame:(CGRect)frame
-            imageData:(NSArray *)imageData
-        pageTintColor:(UIColor *)pageTintColor
-     currentTintColor:(UIColor *)currentTintColor
-        pageControlAlignment:(SYPageControlAlignment)pageControlAlignment{
+                    imageData:(NSArray *)imageData
+                   scrollTime:(NSTimeInterval)scrollTime
+                pageTintColor:(UIColor *)pageTintColor
+             currentTintColor:(UIColor *)currentTintColor
+         pageControlAlignment:(SYPageControlAlignment)pageControlAlignment{
 
     self = [super initWithFrame:frame];
     
     if (self) {
         
+        _scrollTime = scrollTime;
         _imgData = imageData;
         _adScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.width/2)];
         [self addSubview:_adScrollView];
@@ -72,6 +82,7 @@ static CGFloat const  padding = 20;
         [_adScrollView addSubview:first];
         
         _adScrollView.pagingEnabled = YES;
+        _adScrollView.scrollsToTop = NO;
         _adScrollView.bounces = NO;
         _adScrollView.showsHorizontalScrollIndicator = NO;
         _adScrollView.showsVerticalScrollIndicator = NO;
@@ -99,7 +110,7 @@ static CGFloat const  padding = 20;
         }
 
         [self addSubview:_pageControl];
-        [self startAd];
+//        [self startTimer];
 
     }
     return self;
@@ -113,25 +124,33 @@ static CGFloat const  padding = 20;
     }
 }
 
-#pragma mark - startAd
-- (void)startAd{
-    if (_timer == nil){
-        _timer = [NSTimer scheduledTimerWithTimeInterval:2.0
-                                                  target:self
-                                                selector:@selector(nextAd)
-                                                userInfo:nil
-                                                 repeats:YES];
-        
-        [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
-    }else{
-        [self freeTimer];
+- (void)dragAction{
+    
+    if (_drag) {
+        [_timer setFireDate:[NSDate distantPast]];
+        _drag = NO;
+    }
+}
+
+#pragma mark - startTimer
+- (void)startTimer{
+    
+    if (_scrollTime > 0) {
+        if (!_timer){
+            _timer = [NSTimer scheduledTimerWithTimeInterval:_scrollTime
+                                                      target:self
+                                                    selector:@selector(nextAd)
+                                                    userInfo:nil
+                                                     repeats:YES];
+            
+            [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+        }
     }
 }
 
 #pragma mark - nextAd
 - (void)nextAd{
-    
-    NSLog(@"nextAd...");
+
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.3];
     _adScrollView.contentOffset = CGPointMake(_adScrollView.contentOffset.x + _currentWidth, 0);
@@ -154,7 +173,7 @@ static CGFloat const  padding = 20;
     }
 }
 
-#pragma mark - scrollViewDidEndDecelerating
+#pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
     NSInteger page = (scrollView.contentOffset.x - _currentWidth) / _currentWidth;
@@ -174,15 +193,37 @@ static CGFloat const  padding = 20;
     }
 }
 
-#pragma mark - freeTimer
-- (void)freeTimer{
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    
+    [_timer setFireDate:[NSDate distantFuture]];
+    _drag = NO;
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    
+    _drag = YES;
+    
+    [self performSelector:@selector(dragAction) withObject:nil afterDelay:3.0];
+}
+
+
+
+#pragma mark - dissTimer
+- (void)dissTimer{
     [_timer invalidate];
     _timer = nil;
 }
 
+
 #pragma mark - dealloc
 - (void)dealloc{
-    [self freeTimer];
+    
+    [self dissTimer];
+}
+
+- (void)removeFromSuperview{
+    
+    [self dissTimer];
 }
 
 @end
