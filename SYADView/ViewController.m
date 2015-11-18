@@ -7,13 +7,12 @@
 //
 
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
-#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 #import "ViewController.h"
-#import "DetailViewController.h"
 #import "SYADView.h"
 
 @interface ViewController ()
+
 @property (nonatomic, strong) NSArray *imgData;
 @property (nonatomic, strong) SYADView *adView;
 
@@ -30,20 +29,18 @@
     }
     
 #pragma mark - Example
-    if (_imgData.count > 0) {
+    if (_imgData) {
         
         _adView = [[SYADView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/2)
                                         imageData:_imgData
-                                       scrollTime:3.0
-                                    pageTintColor:[UIColor whiteColor]
-                                 currentTintColor:[UIColor orangeColor]
-                                    pageControlAlignment:SYPageControlAlignmentRight];
-
-        __weak typeof(self) weakSelf = self;
-        _adView.didSelectedImageBlock = ^(NSInteger index, NSString *url){
+                             pageControlAlignment:SYPageControlAlignmentRight];
+        
+        _adView.scrollTime = 2.0;
+//        _adView.currentTintColor = [UIColor redColor];
+//        _adView.pageTintColor = [UIColor whiteColor];
+        _adView.didSelectImageBlock = ^(NSInteger index){
         
             NSLog(@"didSelectedImage :%ld",(long)index);
-            [weakSelf.navigationController pushViewController:[[DetailViewController alloc] init] animated:YES];
         };
         [self.view addSubview:_adView];
     }
@@ -54,7 +51,7 @@
     [super viewWillAppear:animated];
     
     if (!_adView.timer.isValid) {
-        [_adView startTimer];
+        [_adView startScroll];
     }
 }
 
@@ -62,7 +59,7 @@
 
     [super viewWillDisappear:animated];
     
-    [_adView dissTimer];
+    [_adView dissmissScroll];
 }
 
 

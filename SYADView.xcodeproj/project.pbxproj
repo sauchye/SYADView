@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		023799981BCCDA8F001F1005 /* SYADView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023799971BCCDA8F001F1005 /* SYADView.m */; settings = {ASSET_TAGS = (); }; };
-		02C7F88E1BCF557E005B08C5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C7F88D1BCF557E005B08C5 /* DetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		023799981BCCDA8F001F1005 /* SYADView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023799971BCCDA8F001F1005 /* SYADView.m */; };
 		F4E03D4E1B62A40F00D6CD83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E03D4D1B62A40F00D6CD83 /* main.m */; };
 		F4E03D511B62A40F00D6CD83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E03D501B62A40F00D6CD83 /* AppDelegate.m */; };
 		F4E03D541B62A40F00D6CD83 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E03D531B62A40F00D6CD83 /* ViewController.m */; };
@@ -36,8 +35,6 @@
 /* Begin PBXFileReference section */
 		023799961BCCDA8F001F1005 /* SYADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYADView.h; sourceTree = "<group>"; };
 		023799971BCCDA8F001F1005 /* SYADView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYADView.m; sourceTree = "<group>"; };
-		02C7F88C1BCF557E005B08C5 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		02C7F88D1BCF557E005B08C5 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		F4E03D481B62A40F00D6CD83 /* SYADView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYADView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E03D4C1B62A40F00D6CD83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4E03D4D1B62A40F00D6CD83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,8 +109,6 @@
 				F4E03D501B62A40F00D6CD83 /* AppDelegate.m */,
 				F4E03D521B62A40F00D6CD83 /* ViewController.h */,
 				F4E03D531B62A40F00D6CD83 /* ViewController.m */,
-				02C7F88C1BCF557E005B08C5 /* DetailViewController.h */,
-				02C7F88D1BCF557E005B08C5 /* DetailViewController.m */,
 				F4E03D551B62A40F00D6CD83 /* Main.storyboard */,
 				F4E03D581B62A40F00D6CD83 /* Images.xcassets */,
 				F4E03D5A1B62A40F00D6CD83 /* LaunchScreen.xib */,
@@ -265,7 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02C7F88E1BCF557E005B08C5 /* DetailViewController.m in Sources */,
 				F4E03D541B62A40F00D6CD83 /* ViewController.m in Sources */,
 				023799981BCCDA8F001F1005 /* SYADView.m in Sources */,
 				F4E03D511B62A40F00D6CD83 /* AppDelegate.m in Sources */,

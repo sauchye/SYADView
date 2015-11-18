@@ -13,6 +13,7 @@
 static NSInteger const BUTTON_TAG = 100001;
 static CGFloat const  LEFT_OR_RIGHT_WIDTH = 80;
 static CGFloat const  padding = 20;
+static NSTimeInterval const  delay = 3.0;
 
 @interface SYADView ()<UIScrollViewDelegate>
 
@@ -24,31 +25,18 @@ static CGFloat const  padding = 20;
 @property (nonatomic, strong) NSArray *imgData;
 @property (nonatomic) CGFloat currentWidth;
 @property (nonatomic) CGFloat currentHeight;
-@property (nonatomic, getter=isDrag) BOOL drag;
-
-/**
- *  scrollTime = 0 ADView not auto scroll
- */
-@property (nonatomic) NSTimeInterval scrollTime;
 
 @end
 
 @implementation SYADView
 
-#pragma mark - configureADScrollView
 
 - (instancetype)initWithFrame:(CGRect)frame
                     imageData:(NSArray *)imageData
-                   scrollTime:(NSTimeInterval)scrollTime
-                pageTintColor:(UIColor *)pageTintColor
-             currentTintColor:(UIColor *)currentTintColor
          pageControlAlignment:(SYPageControlAlignment)pageControlAlignment{
-
-    self = [super initWithFrame:frame];
     
-    if (self) {
+    if (self = [super initWithFrame:frame]) {
         
-        _scrollTime = scrollTime;
         _imgData = imageData;
         _adScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.width/2)];
         [self addSubview:_adScrollView];
@@ -93,8 +81,9 @@ static CGFloat const  padding = 20;
         _pageControl = [UIPageControl new];
         _pageControl.currentPage = 0;
         _pageControl.numberOfPages = imageData.count;
-        _pageControl.pageIndicatorTintColor = pageTintColor;
-        _pageControl.currentPageIndicatorTintColor = currentTintColor;
+        _pageControl.pageIndicatorTintColor = self.pageTintColor;
+        _pageControl.currentPageIndicatorTintColor = self.currentTintColor;
+        
 
         if (pageControlAlignment == SYPageControlAlignmentLeft) {
             
@@ -110,34 +99,17 @@ static CGFloat const  padding = 20;
         }
 
         [self addSubview:_pageControl];
-//        [self startTimer];
 
     }
     return self;
 }
 
-- (void)tapBtnClick:(UIButton *)sender{
-    
-    if (_didSelectedImageBlock) {
-        
-        _didSelectedImageBlock(sender.tag - BUTTON_TAG,nil);
-    }
-}
-
-- (void)dragAction{
-    
-    if (_drag) {
-        [_timer setFireDate:[NSDate distantPast]];
-        _drag = NO;
-    }
-}
-
-#pragma mark - startTimer
-- (void)startTimer{
+#pragma mark - startScroll
+- (void)startScroll{
     
     if (_scrollTime > 0) {
         if (!_timer){
-            _timer = [NSTimer scheduledTimerWithTimeInterval:_scrollTime
+            _timer = [NSTimer scheduledTimerWithTimeInterval:self.scrollTime
                                                       target:self
                                                     selector:@selector(nextAd)
                                                     userInfo:nil
@@ -148,7 +120,7 @@ static CGFloat const  padding = 20;
     }
 }
 
-#pragma mark - nextAd
+#pragma mark- nextAd
 - (void)nextAd{
 
     [UIView beginAnimations:nil context:nil];
@@ -173,8 +145,24 @@ static CGFloat const  padding = 20;
     }
 }
 
+
+#pragma mark - Handel Event
+- (void)tapBtnClick:(UIButton *)sender{
+    
+    if (_didSelectImageBlock) {
+        
+        _didSelectImageBlock(sender.tag - BUTTON_TAG);
+    }
+}
+
+
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
+    
+    if (_scrollTime > 0) {
+        [self startScroll];
+    }
     
     NSInteger page = (scrollView.contentOffset.x - _currentWidth) / _currentWidth;
     
@@ -193,37 +181,95 @@ static CGFloat const  padding = 20;
     }
 }
 
-
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     
-    [_timer setFireDate:[NSDate distantFuture]];
-    _drag = NO;
-}
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    
-    _drag = YES;
-    
-    [self performSelector:@selector(dragAction) withObject:nil afterDelay:3.0];
+    [self dissmissScroll];
 }
 
 
+#pragma mark - setter
 
-#pragma mark - dissTimer
-- (void)dissTimer{
+@synthesize pageTintColor = _pageTintColor;
+@synthesize currentTintColor = _currentTintColor;
+@synthesize scrollTime = _scrollTime;
+
+- (UIColor *)pageTintColor{
+    
+    if (!_pageTintColor) {
+        _pageTintColor = [UIColor whiteColor];
+    }
+    return _pageTintColor;
+}
+
+- (void)setPageTintColor:(UIColor *)pageTintColor{
+    
+    if (_pageControl) {
+        _pageControl.pageIndicatorTintColor = pageTintColor;
+    }
+    _pageTintColor = pageTintColor;
+}
+
+
+- (void)setCurrentTintColor:(UIColor *)currentTintColor{
+    
+    if (_pageControl) {
+        _pageControl.currentPageIndicatorTintColor = currentTintColor;
+    }
+    _currentTintColor = currentTintColor;
+}
+
+- (UIColor *)currentTintColor{
+    
+    if (!_currentTintColor) {
+        _currentTintColor = [UIColor orangeColor];
+    }
+    return _currentTintColor;
+}
+
+- (NSTimeInterval)scrollTime{
+    
+    if (!_scrollTime) {
+        _scrollTime = delay;
+    }
+    return _scrollTime;
+}
+
+//- (void)setScrollTime:(NSTimeInterval)scrollTime{
+//    
+//    if (!_scrollTime) {
+//        _scrollTime = delay;
+//    }
+//    _scrollTime = scrollTime;
+//}
+
+#pragma mark - applicationDidBecomeActive
+- (void)applicationWillResignActive{
+    [self dissmissScroll];
+}
+
+- (void)applicationDidBecomeActive{
+    
+    if (_scrollTime > 0){
+        [self startScroll];
+    }
+}
+
+#pragma mark - dissmissScroll
+- (void)dissmissScroll{
     [_timer invalidate];
     _timer = nil;
 }
 
 
-#pragma mark - dealloc
+#pragma mark -dealloc
 - (void)dealloc{
     
-    [self dissTimer];
+    [self dissmissScroll];
 }
 
 - (void)removeFromSuperview{
     
-    [self dissTimer];
+    [self startScroll];
 }
 
 @end
