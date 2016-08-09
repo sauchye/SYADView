@@ -10,6 +10,7 @@
 
 #import "ViewController.h"
 #import "SYADView.h"
+#import "DetailViewController.h"
 
 @interface ViewController ()
 
@@ -22,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"SYADView";
     
     if (!_imgData) {
@@ -35,14 +37,17 @@
                                         imageData:_imgData
                              pageControlAlignment:SYPageControlAlignmentRight];
         
-        _adView.scrollTime = 2.0;
 //        _adView.currentTintColor = [UIColor redColor];
 //        _adView.pageTintColor = [UIColor whiteColor];
+        _adView.scrollTime = 2.f;
+        __weak typeof(self) weakSelf = self;
+        [self.view addSubview:_adView];
+
         _adView.didSelectImageBlock = ^(NSInteger index){
         
+            [weakSelf.navigationController pushViewController:[DetailViewController  new] animated:YES];
             NSLog(@"didSelectedImage :%ld",(long)index);
         };
-        [self.view addSubview:_adView];
     }
 }
 
@@ -58,14 +63,11 @@
 - (void)viewWillDisappear:(BOOL)animated{
 
     [super viewWillDisappear:animated];
-    
-    [_adView dissmissScroll];
+    if (_adView.timer.isValid) {
+        [_adView dissmissScroll];
+    }
+
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

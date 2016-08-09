@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		023799981BCCDA8F001F1005 /* SYADView.m in Sources */ = {isa = PBXBuildFile; fileRef = 023799971BCCDA8F001F1005 /* SYADView.m */; };
+		02F9CA3C1D5A469000C05D23 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F9CA3B1D5A469000C05D23 /* DetailViewController.m */; };
 		F4E03D4E1B62A40F00D6CD83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E03D4D1B62A40F00D6CD83 /* main.m */; };
 		F4E03D511B62A40F00D6CD83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E03D501B62A40F00D6CD83 /* AppDelegate.m */; };
 		F4E03D541B62A40F00D6CD83 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E03D531B62A40F00D6CD83 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* Begin PBXFileReference section */
 		023799961BCCDA8F001F1005 /* SYADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYADView.h; sourceTree = "<group>"; };
 		023799971BCCDA8F001F1005 /* SYADView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYADView.m; sourceTree = "<group>"; };
+		02F9CA3A1D5A469000C05D23 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		02F9CA3B1D5A469000C05D23 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		F4E03D481B62A40F00D6CD83 /* SYADView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYADView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E03D4C1B62A40F00D6CD83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4E03D4D1B62A40F00D6CD83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 				F4E03D501B62A40F00D6CD83 /* AppDelegate.m */,
 				F4E03D521B62A40F00D6CD83 /* ViewController.h */,
 				F4E03D531B62A40F00D6CD83 /* ViewController.m */,
+				02F9CA3A1D5A469000C05D23 /* DetailViewController.h */,
+				02F9CA3B1D5A469000C05D23 /* DetailViewController.m */,
 				F4E03D551B62A40F00D6CD83 /* Main.storyboard */,
 				F4E03D581B62A40F00D6CD83 /* Images.xcassets */,
 				F4E03D5A1B62A40F00D6CD83 /* LaunchScreen.xib */,
@@ -204,6 +209,7 @@
 				TargetAttributes = {
 					F4E03D471B62A40F00D6CD83 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = L5LRCZH65Q;
 					};
 					F4E03D601B62A41000D6CD83 = {
 						CreatedOnToolsVersion = 6.4;
@@ -260,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02F9CA3C1D5A469000C05D23 /* DetailViewController.m in Sources */,
 				F4E03D541B62A40F00D6CD83 /* ViewController.m in Sources */,
 				023799981BCCDA8F001F1005 /* SYADView.m in Sources */,
 				F4E03D511B62A40F00D6CD83 /* AppDelegate.m in Sources */,
@@ -391,10 +398,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SYADView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eqc.custmetest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -403,10 +414,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SYADView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eqc.custmetest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

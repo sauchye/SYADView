@@ -99,6 +99,7 @@ static NSTimeInterval const  delay = 3.0;
         }
 
         [self addSubview:_pageControl];
+        
 
     }
     return self;
@@ -123,6 +124,7 @@ static NSTimeInterval const  delay = 3.0;
 #pragma mark- nextAd
 - (void)nextAd{
 
+//    NSLog(@"11111");
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.3];
     _adScrollView.contentOffset = CGPointMake(_adScrollView.contentOffset.x + _currentWidth, 0);
@@ -226,21 +228,14 @@ static NSTimeInterval const  delay = 3.0;
     return _currentTintColor;
 }
 
-- (NSTimeInterval)scrollTime{
+- (void)setScrollTime:(NSTimeInterval)scrollTime{
     
-    if (!_scrollTime) {
+    if (!scrollTime) {
         _scrollTime = delay;
+    }else{
+        _scrollTime = scrollTime;
     }
-    return _scrollTime;
 }
-
-//- (void)setScrollTime:(NSTimeInterval)scrollTime{
-//    
-//    if (!_scrollTime) {
-//        _scrollTime = delay;
-//    }
-//    _scrollTime = scrollTime;
-//}
 
 #pragma mark - applicationDidBecomeActive
 - (void)applicationWillResignActive{
@@ -265,11 +260,6 @@ static NSTimeInterval const  delay = 3.0;
 - (void)dealloc{
     
     [self dissmissScroll];
-}
-
-- (void)removeFromSuperview{
-    
-    [self startScroll];
 }
 
 @end
