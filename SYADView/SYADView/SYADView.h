@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, SYPageControlAlignment) {
 
 
 - (void)startScroll;
-- (void)dissmissScroll;
+- (void)endScroll;
 - (instancetype)initWithFrame:(CGRect)frame
                     imageData:(NSArray *)imageData
          pageControlAlignment:(SYPageControlAlignment)pageControlAlignment;

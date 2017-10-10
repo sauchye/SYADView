@@ -186,7 +186,7 @@ static NSTimeInterval const  delay = 3.0;
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     
-    [self dissmissScroll];
+    [self endScroll];
 }
 
 
@@ -240,7 +240,7 @@ static NSTimeInterval const  delay = 3.0;
 
 #pragma mark - applicationDidBecomeActive
 - (void)applicationWillResignActive{
-    [self dissmissScroll];
+    [self endScroll];
 }
 
 - (void)applicationDidBecomeActive{
@@ -251,7 +251,7 @@ static NSTimeInterval const  delay = 3.0;
 }
 
 #pragma mark - dissmissScroll
-- (void)dissmissScroll{
+- (void)endScroll{
     [_timer invalidate];
     _timer = nil;
 }

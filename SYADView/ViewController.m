@@ -44,9 +44,7 @@
         _adView.scrollTime = 2.f;
         __weak typeof(self) weakSelf = self;
         [self.view addSubview:_adView];
-
         _adView.didSelectImageBlock = ^(NSInteger index){
-        
             [weakSelf.navigationController pushViewController:[DetailViewController  new] animated:YES];
             NSLog(@"didSelectedImage :%ld",(long)index);
         };
@@ -66,7 +64,7 @@
 
     [super viewWillDisappear:animated];
     if (_adView.timer.isValid) {
-        [_adView dissmissScroll];
+        [_adView endScroll];
     }
 
 }
