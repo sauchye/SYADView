@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 sauchye.com. All rights reserved.
 //
 
+
+typedef void(^completeMaxNumber)(int a);
 #import "AppDelegate.h"
 #import "ViewController.h"
 
@@ -16,17 +18,22 @@
 @implementation AppDelegate
 
 
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     
     UINavigationController *rootNav = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
     [rootNav.navigationBar setTranslucent:NO];
     
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = rootNav;
+    
+    
+
+    
     return YES;
+    
+    
 }
 
 

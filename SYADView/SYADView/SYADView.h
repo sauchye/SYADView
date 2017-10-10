@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, SYPageControlAlignment) {
 
 @interface SYADView : UIView
 
-@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, weak) NSTimer *timer;
 
 @property (nonatomic, strong) UIColor *pageTintColor;
 @property (nonatomic, strong) UIColor *currentTintColor;

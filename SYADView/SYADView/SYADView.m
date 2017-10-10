@@ -110,13 +110,14 @@ static NSTimeInterval const  delay = 3.0;
     
     if (_scrollTime > 0) {
         if (!_timer){
+            __weak typeof(self) weakSelf = self;
             _timer = [NSTimer scheduledTimerWithTimeInterval:self.scrollTime
-                                                      target:self
+                                                      target:weakSelf
                                                     selector:@selector(nextAd)
                                                     userInfo:nil
                                                      repeats:YES];
             
-            [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+            [[NSRunLoop currentRunLoop] addTimer:weakSelf.timer forMode:NSDefaultRunLoopMode];
         }
     }
 }
@@ -124,7 +125,7 @@ static NSTimeInterval const  delay = 3.0;
 #pragma mark- nextAd
 - (void)nextAd{
 
-//    NSLog(@"11111");
+    NSLog(@"NEXT AD");
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.3];
     _adScrollView.contentOffset = CGPointMake(_adScrollView.contentOffset.x + _currentWidth, 0);
@@ -253,13 +254,6 @@ static NSTimeInterval const  delay = 3.0;
 - (void)dissmissScroll{
     [_timer invalidate];
     _timer = nil;
-}
-
-
-#pragma mark -dealloc
-- (void)dealloc{
-    
-    [self dissmissScroll];
 }
 
 @end

@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    
     self.title = @"SYADView";
     
     if (!_imgData) {
